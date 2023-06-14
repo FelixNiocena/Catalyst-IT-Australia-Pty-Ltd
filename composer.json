@@ -1,0 +1,13 @@
+{
+    "name": "felixniocena/catalyst-it-australia-pty-ltd",
+    "require": {
+        "php": "8.1",
+        "ext-mysqli": "*"
+    },
+    "authors": [
+        {
+            "name": "Felix Niocena",
+            "email": "niocenafelix@hotmail.com"
+        }
+    ]
+}
