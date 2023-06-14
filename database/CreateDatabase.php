@@ -11,12 +11,8 @@ class CreateDatabase
         $this->config = $config;
     }
 
-    public function createConnection()
+    public function createConnection($host, $user, $dbName, $pass)
     {
-        $host = $this->config['host'];
-        $dbName = $this->config['dbname'];
-        $user = $this->config['username'];
-        $pass = $this->config['password'];
 
         // Establishing connection
         try {
@@ -40,12 +36,8 @@ class CreateDatabase
         }
     }
 
-    public function createUserTable()
+    public function createUserTable($host, $user, $pass, $dbName)
     {
-        $host = $this->config['host'];
-        $dbName = $this->config['dbname'];
-        $user = $this->config['username'];
-        $pass = $this->config['password'];
         $tableName = 'users';
 
         try {
