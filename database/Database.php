@@ -1,19 +1,14 @@
 <?php
 
-$config = require __DIR__ . '/../config/config.php';
-
-class CreateDatabase
+class Database
 {
-    private $config;
 
-    public function __construct($config)
+    public function __construct()
     {
-        $this->config = $config;
     }
 
-    public function createConnection($host, $user, $dbName, $pass)
+    public function createConnection($host, $user, $pass, $dbName)
     {
-
         // Establishing connection
         try {
             $conn = new mysqli($host, $user, $pass);
@@ -26,7 +21,7 @@ class CreateDatabase
             }
 
             // Creating database
-            $createDbScript = 'CREATE DATABASE ' . $dbName;
+            $createDbScript = "CREATE DATABASE $dbName";
             $conn->query($createDbScript);
             echo 'Created database: ' . ucfirst(strtolower($dbName)) . ' successfully' . "\n";
             $conn->close();
@@ -55,10 +50,10 @@ class CreateDatabase
                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 name VARCHAR(30) NOT NULL,
                 surname VARCHAR(30) NOT NULL,
-                email VARCHAR(50))";
+                email VARCHAR(50) UNIQUE)";
 
             $conn->query($script);
-            echo 'Successfully created users table';
+            echo "Successfully created users table\n";
             $conn->close();
 
         } catch (Exception $e) {
