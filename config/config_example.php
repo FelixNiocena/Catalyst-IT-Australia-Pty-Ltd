@@ -1,10 +1,7 @@
 <?php
 
 return [
-    'host' => 'hostName',
-    'dbname' => 'databaseName',
-    'username' => 'dbUsername',
-    'password' => 'dbPassword',
+    'dbname' => 'Replace with Desired Database Name',
 ];
 
 
